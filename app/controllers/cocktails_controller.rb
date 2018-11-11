@@ -30,6 +30,11 @@ class CocktailsController < ApplicationController
     redirect_to cocktail_path(@cocktail)
   end
 
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
+
   private
 
   def find_cocktail
