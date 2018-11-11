@@ -1,11 +1,32 @@
-<h2>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</h2>
-  <% @doses.each do |dose| %>
-  <p><%= dose.description %> - <%= dose.ingredient.name %></p>
-  <%= link_to 'Delete Dose', dose_path(dose), method: "delete" %><br>
-  <% end  %>
+<div class="navbar-wagon">
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag("shaker") %>
+  </a>
+    <a href="/" class="navbar-wagon-title"><%= image_tag("logo") %></a>
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Search</a>
+    <a href="<%= new_cocktail_path  %>" class="navbar-wagon-item navbar-wagon-link">Add New Cocktail</a>
+  </div>
+</div>
 
-<%= link_to 'New Cocktail Dose', new_cocktail_dose_path(@cocktail), class: "btn btn-danger"%> <br>
-<%= link_to 'Back to Cocktail List', cocktails_path, class: "btn btn-success" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 ">
+      <div class="show_card_img" style="background-image: url( '<%= @cocktail.photo %>' );">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="show_card">
+        <h2><%= @cocktail.name %></h2>
+        <hr>
+        <p><em>Ingredients</em></p>
+        <% @doses.each do |dose| %> <p><%= dose.ingredient.name %> - <%= dose.description %> </p><% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="buttons text-center">
+  <%= link_to 'Edit Cocktail', edit_cocktail_path(@cocktail), class: "btn btn-black"%> |
+  <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-black"%>
+</div>
+<%= render 'footer' %>

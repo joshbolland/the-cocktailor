@@ -1,17 +1,28 @@
-<div class="container">
-  <div class="header_card">
-    <h1>Cocktail List</h1>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag("shaker") %>
+  </a>
+
+  <a href="/" class="navbar-wagon-title"><%= image_tag("logo") %></a>
+
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Search</a>
+    <a href="<%= new_cocktail_path  %>" class="navbar-wagon-item navbar-wagon-link">Add New Cocktail</a>
   </div>
 </div>
 <div class="container">
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card">
-          <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+      <div class="card" style="background-image: url('<%=cocktail.photo %>');">
+        <div class="card-description">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        </div>
       </div>
     </div>
   <% end %>
   </div>
-  <h3><%= link_to "Create new cocktail", new_cocktail_path %></h3>
+<%= render 'footer' %>
 </div>
+
