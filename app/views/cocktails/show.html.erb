@@ -28,6 +28,6 @@
 <div class="buttons text-center">
   <%= link_to 'Edit Cocktail', edit_cocktail_path(@cocktail), class: "btn btn-black"%> |
   <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-black"%> |
-  <%= link_to "Delete Cocktail", cocktails_path, method: "delete", data: {confirm: "Are you sure you want to delete this cocktail?"}, class: "btn btn-black" %></li>
+  <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: "delete", data: {confirm: "Are you sure you want to delete this cocktail?"}, class: "btn btn-black" %></li>
 </div>
 <%= render 'footer' %>
