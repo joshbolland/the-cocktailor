@@ -1,5 +1,5 @@
 .btn-black {
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
   color: #242038;
   letter-spacing:1px;
   text-transform:uppercase;
@@ -8,10 +8,12 @@
   font-weight:bold;
   padding:14px 11px;
   margin: 3px;
+  border-radius: 5px;
 }
 
 .btn-black:hover {
   background: #242038;
   color: white;
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
+  border-radius: 5px;
 }
